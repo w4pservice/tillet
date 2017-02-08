@@ -1,7 +1,7 @@
 {
   "project": {
-    "version": "1.0.0-beta.24",
-    "name": "work-tillet"
+    "version": "1.0.0-alpha.1",
+    "name": "tillet-docker-client"
   },
   "apps": [
     {
@@ -20,7 +20,9 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/hammerjs/hammer.min.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
