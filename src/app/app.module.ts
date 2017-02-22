@@ -6,7 +6,7 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { InfoService } from './service/info.service';
-import { ShowInfo } from './show-info-component/show-info-component';
+import { ShowInfo } from './show-info-component/show-info.component';
 
 @NgModule({
   declarations: [
