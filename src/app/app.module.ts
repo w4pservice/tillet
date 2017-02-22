@@ -10,7 +10,8 @@ import { ShowInfo } from './show-info-component/show-info.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShowInfo
   ],
   imports: [
     BrowserModule,

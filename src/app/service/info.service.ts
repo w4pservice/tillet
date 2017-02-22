@@ -11,18 +11,17 @@ import { DockerInfo } from '../model/docker.info';
 @Injectable()
 export class InfoService {
 
-  private heroesUrl = 'app/heroes';  // URL to web API
+  private dockerUrl = 'http://localhost:2375/info';
 
   constructor (private http: Http) {}
 
-  getHeroes (): Observable<DockerInfo> {
-    return this.http.get(this.heroesUrl)
+  getInfo (): Observable<DockerInfo> {
+    return this.http.get(this.dockerUrl)
                     .map((res:Response) => res.json())
                     .catch(this.handleError);
   }
   
   private handleError (error: Response | any) {
-    // In a real world app, we might use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';
