@@ -6,6 +6,7 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { InfoService } from './service/info.service';
+import { AppManager } from './service/app-manager.service';
 import { ShowInfo } from './show-info-component/show-info.component';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ShowInfo } from './show-info-component/show-info.component';
     MaterialModule.forRoot()
   ],
   providers: [
-    InfoService
+    InfoService,
+    AppManager
   ],
   bootstrap: [AppComponent]
 })
