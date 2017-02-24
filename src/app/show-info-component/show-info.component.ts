@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoService } from '../service/info.service';
-import { DockerInfo } from '../model/docker.info';
+import { DaemonInfo } from '../model/daemon-info';
+
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'show-info',
@@ -9,14 +11,16 @@ import { DockerInfo } from '../model/docker.info';
 })
 export class ShowInfo implements OnInit {
 
-  info: DockerInfo = new DockerInfo();
+  info:   DaemonInfo = new DaemonInfo();
+  error:  string;
 
   constructor( private infoService: InfoService ) { }
 
-  ngOnInit() : void { 
-    this.infoService.getInfo()
-        .subscribe( info => this.info = info )
-        .unsubscribe();
+  ngOnInit() : void {
 
+    this.infoService.getInfo().subscribe(
+      info => this.info = info,
+      error => this.error = <any>error
+    );
   }
 }

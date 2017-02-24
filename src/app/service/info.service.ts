@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { DockerInfo } from '../model/docker.info';
+import { DockerInfo } from '../model/docker-info.interface';
 import { AppManager } from '../service/app-manager.service';
 
 @Injectable()
@@ -15,7 +15,7 @@ export class InfoService {
 
   getInfo (): Observable<DockerInfo> {
     return this.http.get(this.manager.getUrl() + '/info')
-                    .map((res:Response) => res.json())
+                    .map((res:Response) => <DockerInfo>res.json())
                     .catch(this.handleError);
   }
   

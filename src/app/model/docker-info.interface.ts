@@ -1,6 +1,6 @@
-export class DockerInfo {
+export interface DockerInfo {
 
-id:                     string;
+ID:                     string;
 containers:             number;
 containersRunning:      number;
 containersPaused:       number;
@@ -47,4 +47,9 @@ defaultRuntime:         string;
 liveRestoreEnabled:     string;
 isolation:              string;
 initBinary:             string;
+}
+
+}
+
+
 }
