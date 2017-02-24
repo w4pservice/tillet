@@ -15,7 +15,7 @@ export class InfoService {
 
   getInfo (): Observable<DockerInfo> {
     return this.http.get(this.manager.getUrl() + '/info')
-                    .map((res:Response) => <DockerInfo>res.json())
+                    .map((res:Response) => res.json())
                     .catch(this.handleError);
   }
   
