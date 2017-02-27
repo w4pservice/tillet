@@ -1,15 +1,23 @@
-<md-sidenav-container class="example-container">
-  <md-sidenav mode="push" #sidenav class="example-sidenav">
-    <p>Sidenav Content</p>
+
+<md-sidenav-container class="flex-container" fxLayout="column" fxFil>
+  <md-sidenav mode="push" #sidenav class="tillet-sidenav flex-item" fxLayout="column">
+    <div>Main Sidenav</div>
   </md-sidenav>
 
+<div class="flex-item" fxLayout="column" fxLayoutAlign="start stretch">
  <md-toolbar color="primary">
-  <div class="example-sidenav-content">
+
+  <div class="tillet-sidenav-content">
+
     <button class="tillet-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
+      <i class="material-icons tillet-toolbar-menu">menu</i>
     </button>
-    <div class="content"></div>
+
+    <div class="content">
+      <show-info></show-info>
+    </div>
   </div>
+
  </md-toolbar>
-<p><show-info></show-info></p>
+</div>
 </md-sidenav-container>

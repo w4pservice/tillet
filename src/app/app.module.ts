@@ -8,11 +8,15 @@ import { AppComponent } from './app.component';
 import { InfoService } from './service/info.service';
 import { AppManager } from './service/app-manager.service';
 import { ShowInfo } from './show-info-component/show-info.component';
+import { Sidenav } from './sidenav.component/sidenav.component';
+import { MainContent } from './main-content.component/main-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShowInfo
+    ShowInfo,
+    Sidenav,
+    MainContent
   ],
   imports: [
     BrowserModule,

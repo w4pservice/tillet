@@ -1,16 +1,17 @@
-.example-container {
+.tillet-container {
   width: 100%;
   height: 850px;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.example-sidenav-content {
+.tillet-sidenav-content {
   display: flex;
   background: #ffffff;
   display: block;
 }
 
-.example-sidenav {
+.tillet-sidenav {
+  height: 800px;
   padding: 70px;
   background: #FFFFFF
 }
@@ -22,7 +23,7 @@
 .button {
     background-color: #FFFFFF; /* Green */
     top: 10px;
-    left:10px;
+    left: 10px;
     text-align: center
 }
 
