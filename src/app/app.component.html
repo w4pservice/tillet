@@ -1,12 +1,14 @@
-<md-sidenav-container class="example-container">
-  <md-sidenav #sidenav class="example-sidenav">
-    <menu-sidenav></menu-sidenav>
+<md-sidenav-container class="main-container">
+  <md-sidenav mode="push" #sidenav class="menu-sidenav">
+    <sidenav-menue></sidenav-menue>
 </md-sidenav>
 
-  <div class="example-sidenav-content">
-    <button md-button (click)="sidenav.open()">
-      Open sidenav
+  <md-toolbar color="primary">
+  <div class="sidenav-content">
+    <button class="menu-button" (click)="sidenav.open()">
+      <i class="material-icons app-toolbar-menu">menu</i>
     </button>
-    <main-content></main-content>
   </div>
+  </md-toolbar>
+  <main-content></main-content>
 </md-sidenav-container>
