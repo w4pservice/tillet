@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppManager } from './service/app-manager.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  name: string;
+
+  constructor(private manager: AppManager) {
+    this.name=this.manager.getAppName();
+  }
 }

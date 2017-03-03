@@ -1,5 +1,7 @@
 <md-sidenav-container class="main-container">
   <md-sidenav mode="push" #sidenav class="menu-sidenav">
+    <img src="favicon.ico"><br>
+    <h4>{{name}}</h4>
     <sidenav-menue></sidenav-menue>
 </md-sidenav>
 
@@ -10,5 +12,6 @@
     </button>
   </div>
   </md-toolbar>
-  <main-content></main-content>
+  <main-content class="main-content"></main-content>
 </md-sidenav-container>
+<div class="footer">{{name}}</div>
