@@ -7,7 +7,7 @@ import { AppManager } from './service/app-manager.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name: string;
+  private name: string;
 
   constructor(private manager: AppManager) {
     this.name=this.manager.getAppName();
