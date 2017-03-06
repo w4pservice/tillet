@@ -24,7 +24,7 @@ import { StartContent } from './start-content.component/start-content.component'
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    FlexLayoutModule
+    FlexLayoutModule.forRoot()
   ],
   providers: [
     InfoService,
