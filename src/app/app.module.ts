@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout/flexbox';
+import	{ReactiveFormsModule}	from	'@angular/forms';
 
 import { AppComponent } from './app.component';
 import { InfoService } from './service/info.service';
@@ -24,7 +25,8 @@ import { StartContent } from './start-content.component/start-content.component'
     FormsModule,
     HttpModule,
     MaterialModule.forRoot(),
-    FlexLayoutModule.forRoot()
+    FlexLayoutModule.forRoot(),
+    ReactiveFormsModule	
   ],
   providers: [
     InfoService,

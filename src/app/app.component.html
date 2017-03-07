@@ -1,11 +1,11 @@
-<md-sidenav-container>
+<md-sidenav-container class="app-content">
 
   <md-sidenav mode="push" #sidenav class="app-sidenav">
     <sidenav-menue></sidenav-menue>
 </md-sidenav>
 
   <md-toolbar color="primary">
-    <button class="icon-button" (click)="sidenav.open()">
+    <button *ngIf="isConnected" class="icon-button" (click)="sidenav.open()">
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
   </md-toolbar>

@@ -7,7 +7,10 @@ import { AppManager } from './service/app-manager.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  private name: string;
+
+  name: string;
+  connected: boolean = false;
+  
 
   constructor(private manager: AppManager) {
     this.name=this.manager.getAppName();
