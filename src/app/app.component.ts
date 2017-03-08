@@ -8,11 +8,11 @@ import { AppManager } from './service/app-manager.service';
 })
 export class AppComponent {
 
-  name: string;
-  connected: boolean = false;
-  
+  name: string = '';
+  connected: boolean
 
   constructor(private manager: AppManager) {
     this.name=this.manager.getAppName();
+    this.connected = this.manager.getConnected();
   }
 }

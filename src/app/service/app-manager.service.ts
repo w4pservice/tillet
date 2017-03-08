@@ -1,14 +1,21 @@
 import { Injectable }              from '@angular/core';
 import { Http, Response }          from '@angular/http';
+import { Observable }              from 'rxjs/Observable';
+
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/throw';
 
 
 @Injectable()
 export class AppManager {
 
-  private dockerUrl: string = 'http://localhost:2375';
+  private dockerUrl: string = 'http://localhost:2375/';
   private appName: string = 'Tillet Docker Client';
+  private connected: boolean = false;
+  private error: any;
 
-  constructor () {}
+  constructor (private http: Http) {}
 
   public setUrl(url: string) :void {
       this.dockerUrl = url;
@@ -20,5 +27,25 @@ export class AppManager {
 
   public getAppName() : string {
     return this.appName;
+  }
+
+  public setConnected(connected: boolean) {
+    this.connected = connected;
+  }
+
+  public getConnected(): boolean {
+    return this.connected;
+  }
+
+  public connectToHost(address: string) {
+    this.http.get(address + "/info").subscribe(
+      data => {
+        this.setUrl(address);
+        this.setConnected(true);
+      },
+      error => {
+        alert(error)
+      }
+    );
   }
 }

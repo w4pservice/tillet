@@ -1,7 +1,9 @@
+<div fxLayoutAlign="center"><img src="start.png"></div>
+
 <div class="content-container">
     <div fxLayout="column" fxLayoutAlign="space-around center">
         <div><h4>Geben sie die Adresse (mit TCP-Port) des Docker Remote Hosts ein:</h4></div>
-        <div><input [formControl]="addressControl" required style="width: 400px"></div>
+        <div><input [(ngModel)]="address" [formControl]="addressControl" required style="width: 400px"></div>
         <div style="margin: 20px"><button (click)="submitAddress()">Verbinden</button></div>
     </div>
 </div>
