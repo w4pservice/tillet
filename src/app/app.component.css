@@ -15,12 +15,8 @@
   text-decoration: none;
 }
 
-.app-content {
-  padding-inline-start: 10px;
-}
-
 .app-sidenav {
-  padding: 20px;
+  padding: 25px;
   width: 200px;
   height: 100%;
 }
