@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AppManager } from './service/app-manager.service';
 
 @Component({
@@ -9,10 +9,15 @@ import { AppManager } from './service/app-manager.service';
 export class AppComponent {
 
   name: string = '';
-  connected: boolean
+  @Input() connected: boolean
 
   constructor(private manager: AppManager) {
     this.name=this.manager.getAppName();
     this.connected = this.manager.getConnected();
+  }
+
+  testConnected(): boolean {
+    this.connected = this.manager.getConnected();
+    return this.connected;
   }
 }

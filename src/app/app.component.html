@@ -5,15 +5,14 @@
 </md-sidenav>
 
   <md-toolbar color="primary">
-    <button *ngIf="connected" class="icon-button" (click)="sidenav.open()">
+    <button *ngIf="testConnected() == true" class="icon-button" (click)="sidenav.open()">
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
   </md-toolbar>
 
   <div class="app-content">
-    {{manager.getConnected()}}
-    <show-info *ngIf="connected"></show-info>
-    <start-content *ngIf="connected == false"></start-content>
+    <div><start-content *ngIf="testConnected() == false"></start-content></div>
+    <div><show-info *ngIf="testConnected() == true"></show-info></div>
   </div>
   
 </md-sidenav-container>

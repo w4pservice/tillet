@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import	{FormControl}	from	'@angular/forms';
+
 import { InfoService } from '../service/info.service';
 import { AppManager } from '../service/app-manager.service';
 
