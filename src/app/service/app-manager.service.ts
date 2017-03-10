@@ -14,6 +14,7 @@ export class AppManager {
   private appName: string = 'Tillet Docker Client';
   private connected: boolean = false;
   private error: any;
+  private apiVersion: string;
 
   constructor (private http: Http) {}
 
@@ -35,6 +36,14 @@ export class AppManager {
 
   public getConnected(): boolean {
     return this.connected;
+  }
+
+  public setApiVersion(version: string): void {
+    this.apiVersion = version;
+  }
+
+  public getApiVersion(): string {
+    return this.apiVersion;
   }
 
   public connectToHost(address: string) {

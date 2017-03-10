@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 import { DockerInfo } from '../model/docker-info.interface';
+import { DockerVersion } from '../model/docker-version.interface';
 import { AppManager } from '../service/app-manager.service';
 
 @Injectable()
@@ -30,5 +31,11 @@ export class InfoService {
     }
     console.error(errMsg);
     return Observable.throw(errMsg);
+  }
+
+  getVersion(): Observable<DockerVersion> {
+    return this.http.get(this.manager.getUrl() + "/version")
+                    .map((res:Response) => res.json())
+                    .catch(this.handleError);
   }
 }
