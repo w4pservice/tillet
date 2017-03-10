@@ -10,7 +10,7 @@
     </button>
   </md-toolbar>
 
-    <div><start-content *ngIf="testConnected() == false"></start-content></div>
-    <div><show-info *ngIf="testConnected() == true"></show-info></div>
+    <start-content *ngIf="testConnected() == false"></start-content>
+    <show-info *ngIf="testConnected() == true"></show-info>
   
 </md-sidenav-container>
