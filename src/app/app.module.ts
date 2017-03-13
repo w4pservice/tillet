@@ -12,6 +12,7 @@ import { AppManager } from './service/app-manager.service';
 import { ShowInfo } from './show-info-component/show-info.component';
 import { SidenavMenue } from './sidenav-menu.component/sidenav-menue.component';
 import { StartContent } from './start-content.component/start-content.component';
+import { ShowVersion } from './show-version-component/show-version.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { StartContent } from './start-content.component/start-content.component'
     ShowInfo,
     SidenavMenue,
     StartContent,
+    ShowVersion
   ],
   imports: [
     BrowserModule,

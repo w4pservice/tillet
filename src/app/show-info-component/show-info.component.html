@@ -1,3 +1,131 @@
 
-<div class="content-container"></div>
-<div>Das ist show-info</div>
+<div class="sub-content">
+    <show-version></show-version>
+    <h2 class="spacer">Info zum aktuell verbundenen Docker Daemon</h2>
+    <div fxLayoutAlign="start">
+    <table>
+    <tr>
+    <th>Daemon ID</th>
+    <th>Container</th>
+    <th>Containers Running</th>
+    <th>Containers Paused</th>
+    <th>Containers Stopped</th>
+    <th>Images</th>
+    </tr>
+    <tr>
+    <td>{{info.ID}}</td>
+    <td>{{info.Containers}}</td>
+    <td>{{info.ContainersRunning}}</td>
+    <td>{{info.ContainersPaused}}</td>
+    <td>{{info.ContainersStopped}}</td>
+    <td>{{info.Images}}</td>
+  </tr>
+  <tr>
+    <th>Memory Limit</th>
+    <th>Swap Limit</th>
+    <th>Kernel Memory</th>
+    <th>CPU CFS Period</th>
+    <th>CPU CFS Quota</th>
+    <th>CPU Shares</th>
+    </tr>
+    <tr>
+    <td>{{info.MemoryLimit}}</td>
+    <td>{{info.SwapLimit}}</td>
+    <td>{{info.KernelMemory}}</td>
+    <td>{{info.CpuCfsPeriod}}</td>
+    <td>{{info.CpuCfsQuota}}</td>
+    <td>{{info.CPUShares}}</td>
+  </tr>
+   <tr>
+    <th>CPU Sett</th>
+    <th>IPv4 Forwarding</th>
+    <th>Bridge Nf Iptables</th>
+    <th>Bridge Nf Ip6tables</th>
+    <th>Debug</th>
+    <th>NDN Forwarding Daemon</th>
+    </tr>
+    <tr>
+    <td>{{info.CPUSet}}</td>
+    <td>{{info.IPv4Forwarding}}</td>
+    <td>{{info.BridgeNfIptables}}</td>
+    <td>{{info.BridgeNfIp6tables}}</td>
+    <td>{{info.Debug}}</td>
+    <td>{{info.NFd}}</td>
+  </tr>
+  <tr>
+    <th>OOM Kill Disable</th>
+    <th>NGO Routines</th>
+    <th>System Time</th>
+    <th>Logging Driver</th>
+    <th>C Group Driver</th>
+    <th>N Events Listener</th>
+    </tr>
+    <tr>
+    <td>{{info.OomKillDisable}}</td>
+    <td>{{info.NGoroutines}}</td>
+    <td>{{info.SystemTime}}</td>
+    <td>{{info.LoggingDriver}}</td>
+    <td>{{info.CgroupDriver}}</td>
+    <td>{{info.NEventsListener}}</td>
+  </tr>
+  <tr>
+    <th>Kernel Version</th>
+    <th>Operating System</th>
+    <th>OSType</th>
+    <th>Architecture</th>
+    <th>Index Server Address</th>
+    <th>N CPU</th>
+    </tr>
+    <tr>
+    <td>{{info.KernelVersion}}</td>
+    <td>{{info.OperatingSystem}}</td>
+    <td>{{info.OSType}}</td>
+    <td>{{info.Architecture}}</td>
+    <td>{{info.IndexServerAddress}}</td>
+    <td>{{info.NCPU}}</td>
+  </tr>
+   <tr>
+    <th>Memory Total</th>
+    <th>Docker Root Directory</th>
+    <th>Http Proxy</th>
+    <th>Https Proxy</th>
+    <th>No Proxy</th>
+    <th>Name</th>
+    </tr>
+    <tr>
+    <td>{{info.MemTotal}}</td>
+    <td>{{info.DockerRootDir}}</td>
+    <td>{{info.HttpProxy}}</td>
+    <td>{{info.HttpsProxy}}</td>
+    <td>{{info.NoProxy}}</td>
+    <td>{{info.Name}}</td>
+  </tr>
+    <tr>
+    <th>Labels</th>
+    <th>Experimental Build</th>
+    <th>Server Version</th>
+    <th>Cluster Store</th>
+    <th>Cluster Advertise</th>
+    <th>Default Runtime</th>
+    </tr>
+    <tr>
+    <td>{{info.Labels}}</td>
+    <td>{{info.ExperimentalBuild}}</td>
+    <td>{{info.ServerVersion}}</td>
+    <td>{{info.ClusterStore}}</td>
+    <td>{{info.ClusterAdvertise}}</td>
+    <td>{{info.DefaultRuntime}}</td>
+  </tr>
+    <tr>
+    <th>Live Restore Enabled</th>
+    <th>Isolation</th>
+    <th>Init Binary</th>
+    </tr>
+    <tr>
+    <td>{{info.LiveRestoreEnabled}}</td>
+    <td>{{info.Isolation}}</td>
+    <td>{{info.InitBinary}}</td>
+  </tr>
+  </table>
+</div>
+</div>

@@ -2,10 +2,30 @@ html
 {
    font-size: 1em !important;
    color: #000 !important;
-   font-family: Arial !important;
+   font-family: arial, sans-serif !important;
 }
 
 body {
   background: white;
   margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td {
+    color: white;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: brown;
 }

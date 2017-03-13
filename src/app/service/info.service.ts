@@ -34,7 +34,7 @@ export class InfoService {
   }
 
   getVersion(): Observable<DockerVersion> {
-    return this.http.get(this.manager.getUrl() + "/version")
+    return this.http.get("http://localhost:2375/version")
                     .map((res:Response) => res.json())
                     .catch(this.handleError);
   }

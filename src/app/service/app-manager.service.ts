@@ -10,7 +10,7 @@ import 'rxjs/add/observable/throw';
 @Injectable()
 export class AppManager {
 
-  private dockerUrl: string = 'http://localhost:2375/';
+  private dockerUrl: string;
   private appName: string = 'Tillet Docker Client';
   private connected: boolean = false;
   private error: any;
@@ -47,7 +47,7 @@ export class AppManager {
   }
 
   public connectToHost(address: string) {
-    this.http.get(address + "/info").subscribe(
+    this.http.get(address + "/version").subscribe(
       data => {
         this.setUrl(address);
         this.setConnected(true);
