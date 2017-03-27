@@ -17,7 +17,6 @@ export class ShowInfo implements OnInit {
   constructor( private infoService: InfoService ) { }
 
   ngOnInit() : void {
-
     this.infoService.getInfo().subscribe(
       info => this.info = info,
       error => this.error = <any>error

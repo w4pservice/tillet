@@ -1,6 +1,4 @@
-import { DockerInfo } from './docker-info.interface';
-
-export class DaemonInfo implements DockerInfo {
+export class DaemonInfo {
 
 ID:                     string;
 containers:             number;
@@ -9,6 +7,7 @@ containersPaused:       number;
 containersStopped:      number;
 images:                 number;
 driver:                 string;
+DriverStatus:           string[][] = new Array();
 memoryLimit:            boolean;
 swapLimit:              boolean;
 kernelMemory:           boolean;
@@ -44,9 +43,25 @@ experimentalBuild:      string;
 serverVersion:          string;
 clusterStore:           string;
 clusterAdvertise:       string;
-runtimes:               string;
+Runtimes = new DaemonRuntimes();
 defaultRuntime:         string;
 liveRestoreEnabled:     string;
 isolation:              string;
 initBinary:             string;
 }
+
+//********************************************************************************************************* */
+
+class DaemonRuntimes {
+
+     runc:  RUNC = new RUNC();
+}
+
+//***********************************************************************************************************/
+
+class RUNC {
+    path:string = '';
+}
+
+//***********************************************************************************************************/
+

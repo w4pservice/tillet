@@ -1,3 +1,5 @@
+import { DaemonRuntimes } from './daemon-runtimes'
+
 export interface DockerInfo {
 
 ID:                     string;
@@ -42,14 +44,9 @@ experimentalBuild:      string;
 serverVersion:          string;
 clusterStore:           string;
 clusterAdvertise:       string;
-runtimes:               string;
+Runtimes:               DaemonRuntimes;
 defaultRuntime:         string;
 liveRestoreEnabled:     string;
 isolation:              string;
 initBinary:             string;
-}
-
-}
-
-
 }

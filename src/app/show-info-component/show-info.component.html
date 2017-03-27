@@ -2,10 +2,11 @@
 <div class="sub-content">
     <show-version></show-version>
     <h2 class="spacer">Info zum aktuell verbundenen Docker Daemon</h2>
+    <h4>Daemon ID: {{info.ID}}</h4>
     <div fxLayoutAlign="start">
     <table>
     <tr>
-    <th>Daemon ID</th>
+    <th>Init Binary</th>
     <th>Container</th>
     <th>Containers Running</th>
     <th>Containers Paused</th>
@@ -13,7 +14,7 @@
     <th>Images</th>
     </tr>
     <tr>
-    <td>{{info.ID}}</td>
+    <td>{{info.InitBinary}}</td>
     <td>{{info.Containers}}</td>
     <td>{{info.ContainersRunning}}</td>
     <td>{{info.ContainersPaused}}</td>
@@ -119,12 +120,10 @@
     <tr>
     <th>Live Restore Enabled</th>
     <th>Isolation</th>
-    <th>Init Binary</th>
     </tr>
     <tr>
     <td>{{info.LiveRestoreEnabled}}</td>
     <td>{{info.Isolation}}</td>
-    <td>{{info.InitBinary}}</td>
   </tr>
   </table>
 </div>

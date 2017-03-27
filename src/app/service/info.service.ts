@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { DockerInfo } from '../model/docker-info.interface';
+import { DaemonInfo } from '../model/daemon-info';
 import { DockerVersion } from '../model/docker-version.interface';
 import { AppManager } from '../service/app-manager.service';
 
@@ -14,10 +14,15 @@ export class InfoService {
 
   constructor (private http: Http, private manager: AppManager ) {}
 
-  getInfo (): Observable<DockerInfo> {
-    return this.http.get(this.manager.getUrl() + "/info")
-                    .map((res:Response) => res.json())
+  getInfo(): Observable<DaemonInfo> {
+    return this.http.get('http://localhost:2375//info')
+                    .map(this.extractData)
                     .catch(this.handleError);
+  }
+
+  private extractData(res: Response) {
+    let body = res.json();
+    return body || { };
   }
   
   private handleError (error: Response | any) {
