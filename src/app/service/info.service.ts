@@ -5,26 +5,27 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
-import { DaemonInfo } from '../model/daemon-info';
-import { DockerVersion } from '../model/docker-version.interface';
+import { DockerVersion } from '../model/docker-version';
 import { AppManager } from '../service/app-manager.service';
 
 @Injectable()
 export class InfoService {
 
+  data: Object;
+
   constructor (private http: Http, private manager: AppManager ) {}
 
-  getInfo(): Observable<DaemonInfo> {
-    return this.http.get('http://localhost:2375//info')
-                    .map(this.extractData)
+  getInfo (): Observable<string> {
+    return this.http.get(this.manager.getUrl() + "/info")
+                    .map(this.getData)
                     .catch(this.handleError);
   }
 
-  private extractData(res: Response) {
-    let body = res.json();
-    return body || { };
+  getData(res: Response) {
+    let body = res.json()
+    return JSON.stringify(body,null,4);
   }
-  
+
   private handleError (error: Response | any) {
     let errMsg: string;
     if (error instanceof Response) {
@@ -37,6 +38,7 @@ export class InfoService {
     console.error(errMsg);
     return Observable.throw(errMsg);
   }
+
 
   getVersion(): Observable<DockerVersion> {
     return this.http.get("http://localhost:2375/version")

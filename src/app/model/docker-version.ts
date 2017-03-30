@@ -1,6 +1,5 @@
-import { DockerVersion } from './docker-version.interface';
 
-export class DaemonVersion implements DockerVersion {
+export class DockerVersion {
 
     Version: string;
     ApiVersion: string;

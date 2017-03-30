@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InfoService } from '../service/info.service';
 import { AppManager } from '../service/app-manager.service';
-import { DaemonVersion } from '../model/daemon-version';
+import { DockerVersion } from '../model/docker-version';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -12,7 +12,7 @@ import 'rxjs/add/operator/toPromise';
 })
 export class ShowVersion implements OnInit {
 
-  version: DaemonVersion = new DaemonVersion();
+  version: DockerVersion = new DockerVersion();
   error:  string;
 
   constructor( private infoService: InfoService, private manager: AppManager ) { }
