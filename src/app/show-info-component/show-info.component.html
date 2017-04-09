@@ -3,5 +3,8 @@
     <show-version></show-version>
 </div>
 
-<div><textarea style="background-color:black;color:white;height:600px;width:100%">{{info}}</textarea></div>
+<div fxLayout="column" fxLayoutAlign="space-around center center">
+    <h2>Docker Konfiguration - verbunden mit:</h2><h2>{{manager.getUrl()}}</h2>
+    <textarea readonly style="background-color:black;color:green;height:500px;width:500px">{{info}}</textarea>
+</div>
 
